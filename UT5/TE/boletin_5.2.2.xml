@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 
-<!DOCTYPE stock [
-    <!ELEMENT stock (articulo)*>
-    <!ELEMENT articulo (categoria, precio?)>
-    <!ATTLIST articulo codigo CDATA #REQUIRED>
-    <!ELEMENT categoria (#PCDATA)>
-    <!ELEMENT precio (#PCDATA)>
-]>
+<!DOCTYPE stock SYSTEM "boletin_5.2.2.dtd">
 <stock>
   <articulo codigo="13252A">
     <categoria>Ordenador</categoria>
