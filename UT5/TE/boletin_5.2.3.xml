@@ -1,16 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE empresas [
     <!ELEMENT empresas (empresa)>
-    <!ELEMENT empresa (propietario, jefe, empleado)>
-    <!ELEMENT propietario (codigo, nombre, tfno, edad)>
+    <!ELEMENT empresa (propietario, jefe, empleado*)>
+    <!ELEMENT propietario (codigo, nombre, tfno)>
     <!ELEMENT codigo EMPTY>
       <!ATTLIST codigo dpto ID #IMPLIED>
       <!ATTLIST codigo puesto CDATA #IMPLIED>
     <!ELEMENT nombre (#PCDATA)>
       <!ENTITY manuel "manuel">
       <!ENTITY jorge "jorge">
-    
-
+    <!ELEMENT tfno (#PCDATA)>
+  
+    <!ELEMENT jefe (codigo, nombre, tfno)>
+   
 ]>
 
 <empresas>
