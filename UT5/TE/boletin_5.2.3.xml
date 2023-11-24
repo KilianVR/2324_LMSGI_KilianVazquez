@@ -4,9 +4,11 @@
     <!ELEMENT empresa (propietario, jefe, empleado)>
     <!ELEMENT propietario (codigo, nombre, tfno, edad)>
     <!ELEMENT codigo EMPTY>
-    <!ATTLIST codigo dpto ID #IMPLIED>
-    <!ATTLIST codigo puesto CDATA #IMPLIED>
+      <!ATTLIST codigo dpto ID #IMPLIED>
+      <!ATTLIST codigo puesto CDATA #IMPLIED>
     <!ELEMENT nombre (#PCDATA)>
+      <!ENTITY manuel "manuel">
+      <!ENTITY jorge "jorge">
     
 
 ]>
