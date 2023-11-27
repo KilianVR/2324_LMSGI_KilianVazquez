@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE curso [
+    <!ELEMENT curso ((codigo|(nombre,abreviatura)),fechainicio,alumno*)>
+    <!ELEMENT codigo (#PCDATA)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT abreviatura (#PCDATA)>
+    <!ELEMENT fechainicio (#PCDATA)>
+        <!ATTLIST fechainicio dia CDATA #REQUIRED>
+        <!ATTLIST fechainicio mes CDATA #REQUIRED>
+        <!ATTLIST fechainicio anio CDATA #FIXED "2016">
+    <!ELEMENT alumno (dni)>
+        <!ATTLIST alumno mayor_edad CDATA #IMPLIED>
+    <!ELEMENT dni (#PCDATA)>
+]>
+
+
+<curso>
+    <codigo>A003</codigo>
+    <fechainicio dia="9" mes="1" anio="2016">9 enero</fechainicio>
+    <alumno mayor_edad="s">
+        <dni>84235434C</dni>
+    </alumno>
+</curso>
