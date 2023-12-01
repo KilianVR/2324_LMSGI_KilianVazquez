@@ -4,4 +4,9 @@
     <name>John Doe</name>
     <age>25</age>
     <city>New York</city>
+    <direccion>
+        <calle></calle>
+        <provincia></provincia>
+        <cod_postal></cod_postal>
+    </direccion>
   </person>
