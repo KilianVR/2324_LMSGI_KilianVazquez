@@ -1,0 +1,19 @@
+<!ELEMENT geografia (continentes*, paises*, rios+)>
+<!ELEMENT continentes (continente+)>
+  <!ELEMENT continente (nacion)*>
+    <!ATTLIST continente nombre CDATA #REQUIRED>
+    <!ELEMENT nacion (#PCDATA)>
+<!ELEMENT paises (pais*)>
+  <!ELEMENT pais (sistema+, superficie+, moneda+, moneda_nativa?)>
+  <!ATTLIST pais codigo CDATA #REQUIRED>
+  <!ATTLIST pais nombre CDATA #REQUIRED>
+  <!ATTLIST pais idioma CDATA #DEFAULT ingles>
+    <!ELEMENT sistema (#PCDATA)>
+    <!ELEMENT superficie (#PCDATA)>
+    <!ELEMENT moneda (#PCDATA)>
+    <!ELEMENT moneda_nativa EMPTY>
+      <!ATTLIST moneda_nativa nombre CDATA #REQUIRED>
+<!ELEMENT rios (rio*)>
+  <!ELEMENT rio (nombre, nacion*)>
+    <!ATTLIST rio tipo-agua CDATA #IMPLIED>
+    <!ELEMENT nombre (#PCDATA)>

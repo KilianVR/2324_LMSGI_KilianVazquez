@@ -1,0 +1,12 @@
+<!ELEMENT recetas (receta)*>
+        <!ELEMENT receta (nombre_receta, comensales, ingredientes, pasos)>
+            <!ELEMENT nombre_receta (#PCDATA)>
+            <!ELEMENT comensales (#PCDATA)>
+            <!ELEMENT ingredientes (ingrediente)+>
+                <!ATTLIST ingredientes total CDATA #REQUIRED>
+                <!ELEMENT ingrediente EMPTY>
+                    <!ATTLIST ingrediente nombre ID #REQUIRED>
+                    <!ATTLIST ingrediente cantidad CDATA #IMPLIED>
+            <!ELEMENT pasos (paso+)>
+                <!ELEMENT paso (#PCDATA)>
+                    <!ATTLIST paso numero ID #REQUIRED>

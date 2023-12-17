@@ -1,0 +1,14 @@
+<!-- PROFESOR -->
+<?xml-model href="esquemas/06.ejercicio.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!-- PROFESOR -->
+<order>
+  <customer>
+    <name>John Doe</name>
+    <email>john@example.com</email>
+  </customer>
+  <item>
+    <name>Laptop</name>
+    <quantity>2</quantity>
+    <price>899.99</price>
+  </item>
+</order>

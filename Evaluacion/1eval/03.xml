@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE recetas SYSTEM "esquemas/05.ejercicio.dtd">
+
+<recetas>
+    <receta>
+        <nombre_receta>Sopa de Cebolla</nombre_receta>
+        <comensales>4</comensales>
+        <ingredientes total="9">
+            <ingrediente nombre="cebolla" cantidad="1Kg" />
+            <ingrediente nombre="caldocarne" cantidad="2 Libros" />
+            <ingrediente nombre="mantequilla" cantidad="100g" />
+            <ingrediente nombre="harina" cantidad="1 cucharada" />
+            <ingrediente nombre="quesoemmental" cantidad="100g" />
+            <ingrediente nombre="pantostado" />
+            <ingrediente nombre="tomillo" />
+            <ingrediente nombre="laurel" cantidad="1 hoja" />
+            <ingrediente nombre="pimienta" />
+        </ingredientes>
+        <pasos>
+            <paso numero="_1">
+                Pelar y partir las cebollas en rodajas finas.
+            </paso>
+            <paso numero="_2">
+                Rehogarlas con la mantequilla, sal y pimienta a fuego lento hasta que estén
+                transparentes sin dorarse
+            </paso>
+            <paso numero="_3">
+                Añadir la harina sin dejar de remover
+            </paso>
+            <paso numero="_4">
+                Ponerlo en una cazuela con el caldo, el tomillo y el laurel.
+            </paso>
+            <paso numero="_5">
+                Dejar cocer a fuego lento durante unos 15 minutos
+            </paso>
+            <paso numero="_6">
+                Poner las rebanadas de pan encima, espolvorear el queso y gratinar al horno.
+            </paso>
+        </pasos>
+    </receta>
+</recetas>
