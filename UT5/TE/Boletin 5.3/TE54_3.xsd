@@ -129,15 +129,3 @@
     </xs:complexType>
 
 </xs:schema>
-
-
-<!-- Para los atributos
-<xsd:attribute name="tipo">
-  <xsd:simpleType>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="novela"/>
-      <xsd:enumeration value="ensayo"/>
-      <xsd:enumeration value="poesia"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-</xsd:attribute> -->
