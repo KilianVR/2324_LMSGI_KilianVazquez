@@ -1,0 +1,143 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Itinerary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Trip" type="tipoTrip" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipoTrip">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Destination" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="DepartureDate" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ArrivalDate" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Price" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Activities" type="tipoActivities" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Excursions" type="tipoExcursions" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Passengers" type="tipoPassenger" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="code" type="xs:positiveInteger" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="tipoActivities">
+        <xs:sequence>
+            <xs:element name="Activity" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Date" type="xs:date" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="Price" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Type" minOccurs="0" maxOccurs="1">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Aventura" />
+                                    <xs:enumeration value="Cultural" />
+                                    <xs:enumeration value="Gastronómica" />
+                                    <xs:enumeration value="Deportiva" />
+                                    <xs:enumeration value="Otro" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Seats" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoExcursions">
+        <xs:sequence>
+            <xs:element name="Excursion" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Date" type="xs:date" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="Price" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Destination" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Seats" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                    <xs:attribute name="Type" use="optional" >
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="Aventura" />
+                                <xs:enumeration value="Cultural" />
+                                <xs:enumeration value="Gastronómica" />
+                                <xs:enumeration value="Relax" />
+                                <xs:enumeration value="Deportiva" />
+                                <xs:enumeration value="Otro" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoPassenger">
+        <xs:sequence>
+            <xs:element name="Passenger" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="LastName" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="BirthDate" type="xs:date" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="PassportNumber" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="PhoneNumber" minOccurs="0" maxOccurs="1" >
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="CountryCode" type="xs:positiveInteger" />
+                                    <xs:element name="Number" type="xs:positiveInteger" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Email" minOccurs="0" maxOccurs="2" >
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="type" use="optional">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="main" />
+                                                    <xs:enumeration value="secondary" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        
+                        <xs:element name="RoomNumber" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="RoomType" minOccurs="0" maxOccurs="1">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Individual" />
+                                    <xs:enumeration value="Doble" />
+                                    <xs:enumeration value="Triple" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TicketNumber" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
+
+
+<!-- Para los atributos
+<xsd:attribute name="tipo">
+  <xsd:simpleType>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="novela"/>
+      <xsd:enumeration value="ensayo"/>
+      <xsd:enumeration value="poesia"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:attribute> -->
