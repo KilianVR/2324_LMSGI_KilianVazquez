@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empresas [
+    <!ELEMENT empresas (empresa)?>
+    <!ELEMENT empresa (propietario+, jefe?, empleado+)>
+    <!ELEMENT propietario ((codigo, nombre, tfno)+, edad?)>
+    <!ELEMENT codigo (#PCDATA)>
+      <!ATTLIST codigo dpto ID (1 | 2 | 3 | 4 | 5) #IMPLIED>
+      <!ATTLIST codigo puesto CDATA (entrenador_personal | empleado) #IMPLIED>
+    <!ELEMENT nombre (#PCDATA)>
+      <!ENTITY manuel "manuel">
+      <!ENTITY jorge "jorge">
+    <!ELEMENT tfno (#PCDATA)>
+    <!ELEMENT empleado (codigo, nombre, tfno, edad)>
+    <!ELEMENT edad (#PCDATA)>
+    <!ELEMENT jefe (codigo, nombre, tfno)>
+]>
+
+<empresas>
+  <empresa>
+    <propietario>
+      <codigo />
+      <nombre>&manuel;</nombre>
+      <tfno>6258555</tfno>
+    </propietario>
+    <jefe>
+      <codigo />
+      <nombre>&jorge;</nombre>
+      <tfno>6258555</tfno>
+    </jefe>
+    <empleado>
+      <codigo dpto="3" puesto="entrenador_personal" />
+      <nombre>&jorge;</nombre>
+      <tfno>6258555</tfno>
+      <edad>45</edad>
+    </empleado>
+    <empleado>
+      <codigo />
+      <nombre>&jorge;</nombre>
+      <tfno>6258555</tfno>
+      <edad>45</edad>
+    </empleado>
+  </empresa>
+</empresas>

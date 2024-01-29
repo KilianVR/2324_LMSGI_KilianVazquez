@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:noNamespaceSchemaLocation="boletin_5.3.1.xsd">
+  xsi:noNamespaceSchemaLocation="TE54_1.xsd">
 
   <Employee>
     <EmployeeID>1</EmployeeID>
